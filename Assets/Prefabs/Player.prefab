@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5140376692743822694}
   - component: {fileID: 5140376692743822713}
   - component: {fileID: 5552391056209495279}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0086d3d9447996447a2de9e46d85cb30, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 57fb35506dc450643b09d7cb0f701743, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,7 +102,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &5140376692743822713
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef754a5e29ad44a41ab43bbf7a4d12e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 10
-  jumpForce: 10
+  jumpSprite: {fileID: 21300000, guid: 7910ec001fc2fdc4eaa027170a6183fc, type: 3}
+  maxSpeed: 7
   energyToJump: 10
   speed: 10

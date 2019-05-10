@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static float TIME_TO_GET_ENERGY = 3.0f; // 
+    public static int AMOUNT_ENERGY_TO_GET = 5; // 
+    
     #region Events
 
     public static Action StartTutorialEvent = delegate { };

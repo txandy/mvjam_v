@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using UnityEditor;
 using UnityEngine;
 using Utils;
 
@@ -11,6 +12,8 @@ namespace Player
 
         public static Action<float> UpdateEnergyEvent = delegate(float currentEnergy) { };
         public static Action PlayerCanMove = delegate { };
+        public static Action PlayerDieEvent = delegate { };
+        public static Action PlayerStartBlockEvent = delegate { };
 
         #endregion
 
@@ -69,6 +72,19 @@ namespace Player
             }
         }
 
+        private IEnumerator ChargeEnergy()
+        {
+            while (_canMove)
+            {
+                yield return new WaitForSeconds(GameManager.TIME_TO_GET_ENERGY);
+
+                if (_energy < 100)
+                {
+                    UpdateEnergy(_energy + GameManager.AMOUNT_ENERGY_TO_GET);
+                }
+            }
+        }
+
         private IEnumerator ChangeSprite()
         {
             yield return new WaitForSeconds(.5f);
@@ -100,13 +116,34 @@ namespace Player
             UpdateEnergyEvent(_energy);
         }
 
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.gameObject.CompareTag(Helper.TAG_DIE))
+            {
+                Debug.Log("PLAYER DIE");
+                PlayerDieEvent();
+            }
+        }
+
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag(Helper.TAG_ENTRANCE))
             {
                 _canMove = true;
-
                 PlayerCanMove();
+
+                StartCoroutine(ChargeEnergy());
+            }
+
+            if (other.CompareTag(Helper.TAG_DIE))
+            {
+                Debug.Log("PLAYER DIE");
+                PlayerDieEvent();
+            }
+
+            if (other.CompareTag(Helper.TAG_START_BLOCK))
+            {
+                PlayerStartBlockEvent();
             }
         }
     }

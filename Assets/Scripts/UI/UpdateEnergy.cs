@@ -2,6 +2,7 @@
 using Player;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UI
 {
@@ -9,14 +10,13 @@ namespace UI
     {
         #region private var
 
-        private TextMeshProUGUI _textMeshPro;
+        public TextMeshProUGUI textMeshPro;
+        public Image fillImage;
 
         #endregion
 
         private void Awake()
         {
-            _textMeshPro = GetComponent<TextMeshProUGUI>();
-
             // Events
             PlayerController.UpdateEnergyEvent += UpdateEnergyEvent;
         }
@@ -29,7 +29,8 @@ namespace UI
 
         private void UpdateEnergyEvent(float currentEnergy)
         {
-            _textMeshPro.text = currentEnergy.ToString(CultureInfo.InvariantCulture);
+            textMeshPro.text = currentEnergy.ToString(CultureInfo.InvariantCulture);
+            fillImage.fillAmount = currentEnergy / 100;
         }
     }
 }
