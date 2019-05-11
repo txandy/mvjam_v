@@ -616,10 +616,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 3352f5ad-6a4a-463d-991e-5bfe11b0c4f0
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: DeepWell (1)
+  organizationId: txandy
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3701952357321267138}
   - component: {fileID: 3701952357321267151}
   - component: {fileID: 3701952357321267148}
+  - component: {fileID: 8767670285058153103}
   m_Layer: 0
   m_Name: Block2
   m_TagString: Untagged
@@ -3594,6 +3595,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.0101466, y: 0.85908127}
   m_EdgeRadius: 0
+--- !u!114 &8767670285058153103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3701952357321267136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21f997c57b5e1d34eb2a1b0326facaf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3701952357418752255
 GameObject:
   m_ObjectHideFlags: 0
@@ -3644,8 +3657,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -1.9851615, y: -5.0440736}
-  - {x: 0.87062836, y: -7.964938}
+  - {x: -2.0240479, y: -4.989632}
+  - {x: 0.84729695, y: -7.832723}
 --- !u!61 &3701952357418752250
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3659,7 +3672,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.5208011, y: -13.493312}
+  m_Offset: {x: -1.5638716, y: -13.4946575}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3670,7 +3683,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.93651736, y: 1.0121479}
+  m_Size: {x: 0.8503761, y: 1.0094566}
   m_EdgeRadius: 0
 --- !u!61 &3701952357418752251
 BoxCollider2D:
@@ -3685,7 +3698,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.4961874, y: -16.49191}
+  m_Offset: {x: 0.5022413, y: -16.484646}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3696,7 +3709,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.94388545, y: 0.8048897}
+  m_Size: {x: 0.9559933, y: 0.81941986}
   m_EdgeRadius: 0
 --- !u!68 &783051543
 EdgeCollider2D:
@@ -3714,8 +3727,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 3.003317, y: -10.035012}
-  - {x: 0.052779257, y: -12.992241}
+  - {x: 2.9971304, y: -9.991708}
+  - {x: 0.07752508, y: -12.899445}
 --- !u!1 &6954620267563931098
 GameObject:
   m_ObjectHideFlags: 0

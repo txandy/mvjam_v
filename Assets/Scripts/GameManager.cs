@@ -1,12 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using Player;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.Analytics;
 
 public class GameManager : MonoBehaviour
 {
     public static float TIME_TO_GET_ENERGY = 3.0f; // 
     public static int AMOUNT_ENERGY_TO_GET = 5; // 
-    
+
     #region Events
 
     public static Action StartTutorialEvent = delegate { };
@@ -15,7 +18,7 @@ public class GameManager : MonoBehaviour
     #endregion
 
     public static GameManager Instance;
-
+    public AudioSource musicSource;
     public bool isTutorialEnabled;
 
     private bool _isFirstGame = true;
@@ -50,8 +53,9 @@ public class GameManager : MonoBehaviour
         Tutorial.Tutorial.StopTutorialEvent -= StopTutorialEvent;
         PlayerController.PlayerCanMove -= PlayerCanMove;
     }
-    
+
     #region Tutorial
+
     private void StopTutorialEvent()
     {
         Time.timeScale = 1;
@@ -66,7 +70,7 @@ public class GameManager : MonoBehaviour
 
         StartTutorialEvent();
     }
-    
+
     private void PlayerCanMove()
     {
         if (_isFirstGame)
@@ -77,6 +81,18 @@ public class GameManager : MonoBehaviour
             SecondTutorialEvent();
         }
     }
-    
+
     #endregion
+
+    public void RestartGame()
+    {
+        AnalyticsEvent.Custom("restartGame", new Dictionary<string, object>
+        {
+            {"score", UI.Score.Instance.ScorePoints},
+            {"time_elapsed", Time.timeSinceLevelLoad}
+        });
+
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
