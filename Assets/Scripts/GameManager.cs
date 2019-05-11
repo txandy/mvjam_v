@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Player;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Analytics;

@@ -34,14 +34,14 @@ namespace Player
         private Rigidbody2D _rigidbody2D;
         private Sprite _defaultSprite;
         private SpriteRenderer _spriteRenderer;
-
+        private AudioSource _audioSource;
         #endregion
 
         private void Awake()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
-
+            _audioSource = GetComponent<AudioSource>();
             _defaultSprite = _spriteRenderer.sprite;
 
             _canMove = false;
@@ -120,11 +120,18 @@ namespace Player
         {
             if (other.gameObject.CompareTag(Helper.TAG_DIE))
             {
-                Debug.Log("PLAYER DIE");
-                PlayerDieEvent();
+                PlayerDie();
             }
         }
 
+        void PlayerDie()
+        {
+            _audioSource.Play();
+            
+            Debug.Log("PLAYER DIE");
+            PlayerDieEvent();
+        }
+        
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag(Helper.TAG_ENTRANCE))
@@ -137,8 +144,7 @@ namespace Player
 
             if (other.CompareTag(Helper.TAG_DIE))
             {
-                Debug.Log("PLAYER DIE");
-                PlayerDieEvent();
+                PlayerDie();
             }
 
             if (other.CompareTag(Helper.TAG_START_BLOCK))

@@ -14,7 +14,7 @@ namespace UI
         public List<string> dieTexts;
         public Button playAgainButton;
         public Transform container;
-
+        
         private void Awake()
         {
             PlayerController.PlayerDieEvent += PlayerDieEvent;
